@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Tareas</title>
     <link rel="stylesheet" href="css/styeles.css">
-    <script src="js/Tarea.js"></script>
-
+    <script defer src="js/Tarea.js"></script>
 </head>
 <body>
     <header>
@@ -14,8 +13,6 @@
     </header>
     <main>
         <section id="task-form">
-
-            
             <h2>Crear Tarea</h2>
             <form id="create-task-form">
                 <input type="text" id="title" placeholder="Título" required>
@@ -36,13 +33,14 @@
                 </select>
                 <select id="employee">
                     <option value="">Seleccione Responsable</option>
-                   // Opciones se llenarán dinámicamente    
+                    <!-- Opciones se llenarán dinámicamente -->    
                 </select>
                 <input type="text" id="creator" placeholder="Creador de la Tarea" required>
                 <textarea id="observations" placeholder="Observaciones"></textarea>
                 <button type="submit">Crear Tarea</button>
             </form>
         </section>
+
         <section id="task-list">
             <h2>Lista de Tareas</h2>
             <div id="filter-options">
@@ -66,8 +64,13 @@
                     <option value="">Filtrar por Responsable</option>
                     <!-- Opciones se llenarán dinámicamente -->
                 </select>
+                <select id="order-by">
+                    <option value="priority">Por Prioridad</option>
+                    <option value="estimated-end-date">Por Fecha Estimada de Finalización</option>
+                </select>
                 <button id="filter-button">Aplicar Filtros</button>
             </div>
+
             <table>
                 <thead>
                     <tr>
@@ -77,14 +80,37 @@
                         <th>Prioridad</th>
                         <th>Estado</th>
                         <th>Responsable</th>
-                        <th>Acciones</th>
-                    </tr>
+                        <th>Acciones</th>                 
+                       </tr>
                 </thead>
                 <tbody id="tasks-table-body">
                     <!-- Tareas se llenarán dinámicamente -->
                 </tbody>
             </table>
         </section>
+
+        <section id="tasks-by-status">
+            <h2>Tareas agrupadas por estado</h2>
+            <div id="tasks-pendientes">
+                <h3>Pendientes</h3>
+                <ul></ul>
+            </div>
+            <div id="tasks-en-proceso">
+                <h3>En Proceso</h3>
+                <ul></ul>
+            </div>
+            <div id="tasks-terminadas">
+                <h3>Terminadas</h3>
+                <ul></ul>
+            </div>
+            <div id="tasks-en-impedimento">
+                <h3>En Impedimento</h3>
+                <ul></ul>
+            </div>
+        </section>
     </main>
 </body>
 </html>
+
+
+<!-- // Jhonathan Uni sisa 55222510 -->
